@@ -33,38 +33,49 @@
 
     ?>
 
-    <form action="result.php" method="POST">
-        <div class="position-absolute top-50 start-50 translate-middle">
-            <h2>Your information: </h2>
-            <p></p>
-            <div class="mb-4">
-                <label for="name" class="form-label">Your name: </label>
-                <input type="text" class="form-label" id="name" value="<?php echo $name; ?>" disabled>
-            </div>
-            <div class="mb-4">
-                <label for="age" class="form-label">Your age: </label>
-                <input type="text" class="form-label" id="age" value="<?php echo $b->getDate($date).'days'; ?>" disabled>
-            </div>
-            <div>
-                <h2>Your biorhythms: </h2>
+    <div class="container bg-dark" style="padding: 28.5%;">
+        <form action="result.php" method="POST">
+            <div class="position-absolute top-50 start-50 translate-middle bg-light">
+                <h2>Your information: </h2>
+                <br />
                 <p></p>
-                <p>Physical:</p>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $physical); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $physical); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $physical).'%'; ?></div>
+                <div class="mb-4">
+                    <label for="name" class="form-label">Your name: </label>
+                    <input type="text" class="form-label" id="name" value="<?php echo $name; ?>" disabled>
+                </div>
+                <div class="mb-4">
+                    <label for="age" class="form-label">Your age: </label>
+                    <input type="text" class="form-label" id="age" value="<?php echo $b->getDate($date).'days'; ?>" disabled>
                 </div>
                 <br />
-                <p>Emotional:</p>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $emotional); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $emotional); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $emotional).'%'; ?></div>
-                </div>
                 <br />
-                <p>Intellectual:</p>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $intellectual); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $intellectual); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $emotional).'%'; ?></div>
+                <div>
+                    <h2>Your biorhythms: </h2>
+                    <br />
+                    <p></p>
+                    <p>Physical:</p>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $physical); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $physical); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $physical).'%'; ?></div>
+                    </div>
+                    <br />
+                    <p>Emotional:</p>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $emotional); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $emotional); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $emotional).'%'; ?></div>
+                    </div>
+                    <br />
+                    <p>Intellectual:</p>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $intellectual); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $intellectual); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $emotional).'%'; ?></div>
+                    </div>
+                    <br />
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <span class="text-muted">Copyright © 2022 ADRIÀ CARA ROCA & PAU SERRA COMAJOAN</span>
+    </footer>
 
 </body>
 
