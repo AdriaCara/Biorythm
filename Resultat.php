@@ -55,17 +55,17 @@
                     <p></p>
                     <p>Physical:</p>
                     <div class="progress">
-                        <div class="progress-bar <?php if($b->getPercent($b->getDate($date), $physical) < 50) { echo 'bg-danger'; } else { echo 'bg-success'; } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $physical); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $physical); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $physical).'%'; ?></div>
+                        <div class="progress-bar <?php if($b->getPercent($b->getDate($date), $physical) <= 49) { echo 'bg-danger'; } else { echo 'bg-success'; } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $physical); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $physical); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $physical).'%'; ?></div>
                     </div>
                     <br />
                     <p>Emotional:</p>
                     <div class="progress">
-                        <div class="progress-bar <?php if($b->getPercent($b->getDate($date), $emotional) < 50) { echo 'bg-danger'; } else { echo 'bg-success'; } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $emotional); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $emotional); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $emotional).'%'; ?></div>
+                        <div class="progress-bar <?php if($b->getPercent($b->getDate($date), $emotional) <= 49) { echo 'bg-danger'; } else { echo 'bg-success'; } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $emotional); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $emotional); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $emotional).'%'; ?></div>
                     </div>
                     <br />
                     <p>Intellectual:</p>
                     <div class="progress">
-                        <div class="progress-bar <?php if($b->getPercent($b->getDate($date), $intellectual) < 50) { echo 'bg-danger'; } else { echo 'bg-success'; } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $intellectual); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $intellectual); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $intellectual).'%'; ?></div>
+                        <div class="progress-bar <?php if($b->getPercent($b->getDate($date), $intellectual) <=49) { echo 'bg-danger'; } else { echo 'bg-success'; } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $intellectual); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $intellectual); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $intellectual).'%'; ?></div>
                     </div>
                     <br />
                 </div>
