@@ -18,13 +18,13 @@
 
             $cicle = $days / $periode;
 
-            $radiants = (2 * M_PI) / $cicle;
+            $radiants = ((2 * M_PI) * $cicle);
 
             $sinus = sin($radiants);
 
-            $percent = (($sinus + 1) * 100) / 2;
+            $percent = ((($sinus + 1) * 100) / 2);
 
-            return $percent;
+            return number_format($percent, 2);
 
         }
 

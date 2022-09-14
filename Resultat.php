@@ -65,7 +65,7 @@
                     <br />
                     <p>Intellectual:</p>
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $intellectual); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $intellectual); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $emotional).'%'; ?></div>
+                        <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $intellectual); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $intellectual); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $intellectual).'%'; ?></div>
                     </div>
                     <br />
                 </div>

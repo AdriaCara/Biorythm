@@ -13,13 +13,13 @@
             <div class="position-absolute top-50 start-50 translate-middle">
                 <form class="bg-light" action="Resultat.php" method="POST">
                     <div class="mb-4">
-                        <label for="name" class="form-label">Your name: </label>
+                        <h2 for="name" class="form-label">Your name: </h2>
                         <br/>
                         <input type="text" class="form-label" id="name" name="name">
                     </div>
                     <br />
                     <div class="mb-4">
-                        <label class="" for="age" class="form-label">Your age: </label>
+                        <h2 class="" for="age" class="form-label">Your age: </h2>
                         <br/>
                         <input type="date" class="form-label" id="age" name="age">
                     </div>
