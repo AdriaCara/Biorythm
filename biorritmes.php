@@ -1,6 +1,6 @@
 <?php
 
-    class Biorythm 
+    class Biorhythm
     {
 
         public function getDate($date) 
