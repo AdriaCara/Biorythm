@@ -19,35 +19,27 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link" aria-current="page" href="Index.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Resultat.php">Results</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Info.php">What's this</a>
+                            <a class="nav-link active" href="#">What's this</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <div class="container bg-dark" style="padding: 26.7%;">
+        <div class="container bg-dark text-center text-light" style="padding: 26.7%;">
             <div class="position-absolute top-50 start-50 translate-middle">
-                <form class="bg-light" action="Resultat.php" method="POST">
-                    <div class="mb-4">
-                        <h2 for="name" class="form-label">Your name: </h2>
-                        <br/>
-                        <input type="text" class="form-label" id="name" name="name">
-                    </div>
-                    <br />
-                    <div class="mb-4">
-                        <h2 class="" for="age" class="form-label">Your age: </h2>
-                        <br/>
-                        <input type="date" class="form-label" id="age" name="age">
-                    </div>
-                    <button type="submit" class="btn btn-primary end-0">Submit</button>
-                </form>
+                <h2>Biorhythm</h2>
+                <br />
+                <br />
+                <p>The biorhythm theory is the pseudoscientific idea that our daily lives are significantly affected by rhythmic cycles with periods of exactly 23, 28 and 33 days,[1][2][3] typically a 23-day physical cycle, a 28-day emotional cycle, and a 33-day intellectual cycle. The idea was developed by Wilhelm Fliess in the late 19th century, and was popularized in the United States in the late 1970s. The proposal has been independently tested and, consistently, no validity for it has been found.</p>
+                <br />
+                <p>According to the theory of biorhythms, a person's life is influenced by rhythmic biological cycles that affect his or her ability in various domains, such as mental, physical, and emotional activity. These cycles begin at birth and oscillate in a steady (sine wave) fashion throughout life, and by modeling them mathematically, it is suggested that a person's level of ability in each of these domains can be predicted from day to day. The theory is built on the idea that the biofeedback chemical and hormonal secretion functions within the body could show a sinusoidal behavior over time.</p>
             </div>
         </div>
 

@@ -14,8 +14,8 @@
 
         include 'biorritmes.php';
 
-        $date = 'ERROR';
-        $date = 'ERROR';
+        $name = 'Elizabeth Alexandra Mary';
+        $date = new DateTime('10/08/1926');
         $physical = 23;
         $emotional = 28;
         $intellectual = 33;
@@ -29,11 +29,33 @@
         }
 
 
-        $b = new Biorythm();
+        $b = new Biorhythm();
 
     ?>
 
-    <div class="container bg-dark" style="padding: 28.5%;">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Menu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="Index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Results</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Info.php">What's this</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <div class="container bg-dark" style="padding: 26.7%;">
         <form action="result.php" method="POST">
             <div class="position-absolute top-50 start-50 translate-middle bg-light">
                 <h2>Your information: </h2>
