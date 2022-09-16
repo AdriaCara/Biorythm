@@ -29,10 +29,9 @@
                 </div>
             </div>
         </nav>
-        <div class="container bg-dark text-center text-light" style="padding: 18.5%;">
+        <div class="container bg-dark text-center text-light" style="padding: 40vh;">
             <div class="position-absolute top-50 start-50 translate-middle">
                 <h2>Biorhythm</h2>
-                <br />
                 <br />
                 <p>The biorhythm theory is the pseudoscientific idea that our daily lives are significantly affected by rhythmic cycles with periods of exactly 23, 28 and 33 days, typically a 23-day physical cycle, a 28-day emotional cycle, and a 33-day intellectual cycle. The idea was developed by Wilhelm Fliess in the late 19th century, and was popularized in the United States in the late 1970s. The proposal has been independently tested and, consistently, no validity for it has been found.</p>
                 <br />

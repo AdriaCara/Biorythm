@@ -3,6 +3,8 @@
 class Biorhythm
 {
 
+    public $date;
+
     public function getDate($date)
     {
 

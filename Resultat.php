@@ -12,24 +12,24 @@
 
         <?php
 
-        include 'biorritmes.php';
+            include 'biorritmes.php';
 
-        $name = 'Elizabeth Alexandra Mary';
-        $date = new DateTime('10/08/1926');
-        $physical = 23;
-        $emotional = 28;
-        $intellectual = 33;
+            $name = 'Elizabeth Alexandra Mary';
+            $date = new DateTime('10/08/1926');
+            $physical = 23;
+            $emotional = 28;
+            $intellectual = 33;
 
-        if (isset($_POST['age'])) {
-            $date = new DateTime($_POST['age']);
-        }
+            if (isset($_POST['age'])) {
+                $date = new DateTime($_POST['age']);
+            }
 
-        if (isset($_POST['name'])) {
-            $name = $_POST['name'];
-        }
+            if (isset($_POST['name'])) {
+                $name = $_POST['name'];
+            }
 
 
-        $b = new Biorhythm();
+            $b = new Biorhythm();
 
         ?>
 
@@ -55,7 +55,7 @@
             </div>
         </nav>
         <br />
-        <div class="container bg-white" style="padding: 18.5%;">
+        <div class="container bg-white" style="padding: 40vh;">
             <form action="result.php" method="POST">
                 <div class="position-absolute top-50 start-50 translate-middle bg-white">
                     <h2>Your information: </h2>
@@ -106,7 +106,7 @@
             </form>
         </div>
 
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="height:5vh;">
             <span class="text-muted mx-auto">Copyright © 2022 ADRIÀ CARA ROCA & PAU SERRA COMAJOAN</span>
         </footer>
 

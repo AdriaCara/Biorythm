@@ -8,6 +8,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     </head>
     <body>
+        
         <nav class="navbar navbar-expand-lg bg-white">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Menu</a>
@@ -29,7 +30,7 @@
                 </div>
             </div>
         </nav>
-        <div class="container bg-white" style="padding: 18.5%;">
+        <div class="container bg-white" style="padding: 40vh;">
             <div class="position-absolute top-50 start-50 translate-middle">
                 <form class="bg-white" action="Resultat.php" method="POST">
                     <div class="mb-4">
@@ -46,7 +47,7 @@
                 </form>
             </div>
         </div>
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 fixed-botto">
             <span class="text-muted mx-auto"> Copyright © 2022 ADRIÀ CARA ROCA & PAU SERRA COMAJOAN</span>
         </footer>
     </body>
