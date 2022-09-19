@@ -16,6 +16,7 @@
 
             $name = 'Elizabeth Alexandra Mary';
             $date = new DateTime('10/08/1926');
+
             $physical = 23;
             $emotional = 28;
             $intellectual = 33;
@@ -28,6 +29,11 @@
                 $name = $_POST['name'];
             }
 
+            if ($name == null) {
+                
+                $name = 'Anonimus';
+
+            }
 
             $b = new Biorhythm();
 
