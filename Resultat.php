@@ -37,6 +37,10 @@
 
             $b = new Biorhythm();
 
+            $percentPhysical = $b->getPercent($b->getDate($date), $physical);
+            $percentEmotional = $b->getPercent($b->getDate($date), $emotional);
+            $percentIntellectual = $b->getPercent($b->getDate($date), $intellectual);
+
         ?>
 
         <nav class="navbar navbar-expand-lg bg-white">
@@ -82,29 +86,29 @@
                         <p></p>
                         <p>Physical:</p>
                         <div class="progress">
-                            <div class="progress-bar <?php if ($b->getPercent($b->getDate($date), $physical) <= 49) {
+                            <div class="progress-bar <?php if ($percentPhysical <= 49) {
                                                             echo 'bg-danger';
                                                         } else {
                                                             echo 'bg-success';
-                                                        } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $physical); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $physical); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $physical) . '%'; ?></div>
+                                                        } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $percentPhysical; ?>%;" aria-valuenow="<?php echo $percentPhysical; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $percentPhysical . '%'; ?></div>
                         </div>
                         <br />
                         <p>Emotional:</p>
                         <div class="progress">
-                            <div class="progress-bar <?php if ($b->getPercent($b->getDate($date), $emotional) <= 49) {
+                            <div class="progress-bar <?php if ($percentEmotional <= 49) {
                                                             echo 'bg-danger';
                                                         } else {
                                                             echo 'bg-success';
-                                                        } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $emotional); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $emotional); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $emotional) . '%'; ?></div>
+                                                        } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $percentEmotional; ?>%;" aria-valuenow="<?php echo $percentEmotional; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $percentEmotional . '%'; ?></div>
                         </div>
                         <br />
                         <p>Intellectual:</p>
                         <div class="progress">
-                            <div class="progress-bar <?php if ($b->getPercent($b->getDate($date), $intellectual) <= 49) {
+                            <div class="progress-bar <?php if ($percentIntellectual <= 49) {
                                                             echo 'bg-danger';
                                                         } else {
                                                             echo 'bg-success';
-                                                        } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $b->getPercent($b->getDate($date), $intellectual); ?>%;" aria-valuenow="<?php echo $b->getPercent($b->getDate($date), $intellectual); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $b->getPercent($b->getDate($date), $intellectual) . '%'; ?></div>
+                                                        } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $percentIntellectual; ?>%;" aria-valuenow="<?php echo $percentIntellectual; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $percentIntellectual . '%'; ?></div>
                         </div>
                         <br />
                     </div>
