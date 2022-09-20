@@ -26,5 +26,7 @@
 </div>
 
 <?php
+
     include 'Footer.php';
+    
 ?>
