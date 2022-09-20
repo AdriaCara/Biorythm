@@ -3,7 +3,7 @@
     $actveIndex = "";
     $activeResult = "";
     $activeInfo = "active";
-    include 'navbar.php';
+    include 'Navbar.php';
 
 ?>
 

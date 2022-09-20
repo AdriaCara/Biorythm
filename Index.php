@@ -3,13 +3,13 @@
     $activeIndex = "active";
     $activeResult = "";
     $activeInfo = "";
-    include 'navbar.php';
+    include 'Navbar.php';
 
 ?>
 
 <div class="container bg-white" style="padding: 40vh;">
     <div class="position-absolute top-50 start-50 translate-middle">
-        <form class="bg-white" action="Resultat.php" method="POST">
+        <form class="bg-white" action="Result.php" method="POST">
             <div class="mb-4">
                 <h2 for="name" class="form-label">Your name: </h2>
                 <br />

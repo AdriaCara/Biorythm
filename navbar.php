@@ -21,7 +21,7 @@
                             <a class="nav-link <?php echo $activeIndex ?>" href="Index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php echo $activeResult ?>" href="Resultat.php">Results</a>
+                            <a class="nav-link <?php echo $activeResult ?>" href="Result.php">Results</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link <?php echo $activeInfo ?>" href="Info.php">What's this</a>

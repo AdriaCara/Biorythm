@@ -3,9 +3,9 @@
     $actveIndex = "";
     $activeResult = "active";
     $activeInfo = "";
-    include 'navbar.php';
 
-    include 'biorritmes.php';
+    include 'Navbar.php';
+    include 'Biorhythm.php';
 
     $name = 'Elizabeth Alexandra Mary';
     $date = new DateTime('10/08/1926');
@@ -28,11 +28,17 @@
 
     }
 
-    $b = new Biorhythm();
+    $biorhythm = new Biorhythm($physical, $emotional, $intellectual);
 
-    $percentPhysical = $b->getPercent($b->getDate($date), $physical);
-    $percentEmotional = $b->getPercent($b->getDate($date), $emotional);
-    $percentIntellectual = $b->getPercent($b->getDate($date), $intellectual);
+    $days = $biorhythm->getDate($date);
+    
+    $percentPhysical = $biorhythm->setPercentPhysical($days, $physical);
+    $percentEmotional = $biorhythm->setPercentEmotional($days, $emotional);
+    $percentIntellectual = $biorhythm->setPercentIntellectual($days, $intellectual);
+
+    $percentPhysical = $biorhythm->getPercentPhysical();
+    $percentEmotional = $biorhythm->getPercentEmotional();
+    $percentIntellectual = $biorhythm->getPercentIntellectual();
 
 ?>
 
@@ -49,7 +55,7 @@
             </div>
             <div class="mb-4">
                 <label for="age" class="form-label">Number of days passed since your birth: </label>
-                <input type="text" class="form-label" id="age" value="<?php echo $b->getDate($date) . ' days'; ?>" disabled>
+                <input type="text" class="form-label" id="age" value="<?php echo $days . ' days'; ?>" disabled>
             </div>
             <br />
             <div>
@@ -89,5 +95,7 @@
 </div>
 
 <?php
+
     include 'Footer.php';
+
 ?>
