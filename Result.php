@@ -40,6 +40,8 @@
     $percentEmotional = $biorhythm->getPercentEmotional();
     $percentIntellectual = $biorhythm->getPercentIntellectual();
 
+    $sumTotal = ($percentPhysical + $percentEmotional + $percentIntellectual);
+
 ?>
 
 <br />
@@ -48,7 +50,6 @@
         <div class="position-absolute top-50 start-50 translate-middle bg-white">
             <h2>Your information: </h2>
             <br />
-            <p></p>
             <div class="mb-4">
                 <label for="name" class="form-label">Your name: </label>
                 <input type="text" class="form-label" id="name" value="<?php echo $name; ?>" disabled>
@@ -61,34 +62,52 @@
             <div>
                 <h2>Your biorhythms: </h2>
                 <br />
-                <p></p>
                 <p>Physical:</p>
                 <div class="progress">
-                    <div class="progress-bar <?php if ($percentPhysical <= 49) {
+                    <div class="progress-bar progress-bar-striped progress-bar-animated <?php if ($percentPhysical <= 49) {
                                                     echo 'bg-danger';
                                                 } else {
                                                     echo 'bg-success';
-                                                } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $percentPhysical; ?>%;" aria-valuenow="<?php echo $percentPhysical; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $percentPhysical . '%'; ?></div>
+                                                } ?>" role="progressbar" aria-label="Animated striped example" style="width: <?php echo $percentPhysical . '%'; ?>;" aria-valuenow="<?php echo $percentPhysical; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $percentPhysical . '%'; ?></div>
                 </div>
                 <br />
                 <p>Emotional:</p>
                 <div class="progress">
-                    <div class="progress-bar <?php if ($percentEmotional <= 49) {
+                    <div class="progress-bar progress-bar-striped progress-bar-animated <?php if ($percentEmotional <= 49) {
                                                     echo 'bg-danger';
                                                 } else {
                                                     echo 'bg-success';
-                                                } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $percentEmotional; ?>%;" aria-valuenow="<?php echo $percentEmotional; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $percentEmotional . '%'; ?></div>
+                                                } ?>" role="progressbar" aria-label="Animated striped example" style="width: <?php echo $percentEmotional . '%'; ?>;" aria-valuenow="<?php echo $percentEmotional; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $percentEmotional . '%'; ?></div>
                 </div>
                 <br />
                 <p>Intellectual:</p>
                 <div class="progress">
-                    <div class="progress-bar <?php if ($percentIntellectual <= 49) {
+                    <div class="progress-bar  progress-bar-striped progress-bar-animated <?php if ($percentIntellectual <= 49) {
                                                     echo 'bg-danger';
                                                 } else {
                                                     echo 'bg-success';
-                                                } ?>" role="progressbar" aria-label="Basic example" style="width: <?php echo $percentIntellectual; ?>%;" aria-valuenow="<?php echo $percentIntellectual; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $percentIntellectual . '%'; ?></div>
+                                                } ?>" role="progressbar" aria-label="Animated striped example" style="width: <?php echo $percentIntellectual . '%'; ?>;" aria-valuenow="<?php echo $percentIntellectual; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $percentIntellectual . '%'; ?></div>
                 </div>
                 <br />
+                <h2>Total:</h2>
+                <br />
+                <div class="progress">
+                    <div class="progress-bar border border-dark <?php if ((($percentPhysical * 100) / $sumTotal) <= 49) {
+                                                    echo 'bg-danger';
+                                                } else {
+                                                    echo 'bg-success';
+                                                } ?> " role="progressbar" aria-label="Segment one" style="width: <?php echo (($percentPhysical * 100) / $sumTotal) . '%'; ?>" aria-valuenow="<?php echo (($percentPhysical * 100) / $sumTotal); ?>" aria-valuemin="0" aria-valuemax="<?php echo $sumTotal; ?>">Physical</div>
+                    <div class="progress-bar border border-dark <?php if ((($percentEmotional * 100) / $sumTotal) <= 49) {
+                                                    echo 'bg-danger';
+                                                } else {
+                                                    echo 'bg-succes';
+                                                } ?>" role="progressbar" aria-label="Segment two" style="width: <?php echo (($percentEmotional * 100) / $sumTotal) . '%'; ?>" aria-valuenow="<?php echo (($percentEmotional * 100) / $sumTotal); ?>" aria-valuemin="0" aria-valuemax="<?php echo $sumTotal; ?>">Emotional</div>
+                    <div class="progress-bar border border-dark <?php if ((($percentIntellectual * 100) / $sumTotal) <= 49) {
+                                                    echo 'bg-danger';
+                                                } else {
+                                                    echo 'bg-success';
+                                                } ?>" role="progressbar" aria-label="Segment three" style="width: <?php echo (($percentIntellectual * 100) / $sumTotal) . '%'; ?>" aria-valuenow="<?php echo (($percentIntellectual * 100) / $sumTotal); ?>" aria-valuemin="0" aria-valuemax="<?php echo $sumTotal; ?>">Intellectual</div>
+                </div>
             </div>
         </div>
     </form>
