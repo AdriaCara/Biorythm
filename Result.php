@@ -3,10 +3,8 @@
     $actveIndex = "";
     $activeResult = "active";
     $activeInfo = "";
-    $names_en = [ 'Physical', 'Emotional', 'Intellectual'];
-    $string_en = [ 'Your information:', 'Your name:', 'Number of days passed since your birth:', 'Your biorhythms:', 'Total:' ];
 
-    include 'Navbar.php';
+    require 'Navbar.php';
     require 'Biorhythm.php';
 
     $name = 'Diana Frances Spencer';
@@ -51,19 +49,19 @@
 <div class="container bg-white my-5 py-5">
     <form action="result.php" method="POST">
         <div class="position-absolute top-50 start-50 translate-middle bg-white">
-            <h2><?php echo $string_en[0] ?> </h2>
+            <h2><?php echo $currentLenguage[8]; ?></h2>
             <br />
             <div class="mb-4">
-                <label for="name" class="form-label"><?php echo $string_en[1] ?> </label>
+                <label for="name" class="form-label"><?php echo $currentLenguage[9]; ?> </label>
                 <input type="text" class="form-label" id="name" value="<?php echo $name; ?>" disabled>
             </div>
             <div class="mb-4">
-                <label for="age" class="form-label"><?php echo $string_en[2] ?> </label>
+                <label for="age" class="form-label"><?php echo $currentLenguage[10]; ?> </label>
                 <input type="text" class="form-label" id="age" value="<?php echo $days . ' days'; ?>" disabled>
             </div>
             <br />
             <div>
-                <h2><?php echo $string_en[3] ?> </h2>
+                <h2><?php echo $currentLenguage[11]; ?></h2>
                 <?php
 
                     for ($count = 0; $count < count($percents); $count++)
@@ -74,7 +72,7 @@
                         }
                     
                         echo "<br />
-                            <p>$names_en[$count]:</p>
+                            <p>$currentNames[$count]:</p>
                             <div class='progress'>
                                 <div class='progress-bar progress-bar-striped progress-bar-animated $width' role='progressbar' aria-label='Animated striped example' style='width: $percents[$count]%' aria-valuenow='$percents[$count]' aria-valuemin='0' aria-valuemax='100'>$percents[$count]%</div>
                             </div>";
@@ -82,7 +80,7 @@
                 
                 ?>
                 <br />
-                <h2><?php echo $string_en[4] ?></h2>
+                <h2><?php echo $currentLenguage[4]; ?></h2>
                 <br />
                 <div class="progress">
                     <?php 
@@ -96,7 +94,7 @@
                                 $backGround = 'bg-danger';
                             }
 
-                            echo "<div class='progress-bar border border-dark $backGround' role='progressbar' aria-label='Segment two' style='width: $width%' aria-valuenow='$width' aria-valuemin='0' aria-valuemax='$sumTotal'>$names_en[$count]</div>";
+                            echo "<div class='progress-bar border border-dark $backGround' role='progressbar' aria-label='Segment two' style='width: $width%' aria-valuenow='$width' aria-valuemin='0' aria-valuemax='$sumTotal'>$currentNames[$count]</div>";
 
                         }
                     ?>
