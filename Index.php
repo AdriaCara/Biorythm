@@ -7,7 +7,7 @@
 
 ?>
 
-<div class="container bg-white" style="padding: 40vh;">
+<div class="container bg-white my-5 py-5">
     <div class="position-absolute top-50 start-50 translate-middle">
         <form class="bg-white" action="Result.php" method="POST">
             <div class="mb-4">
