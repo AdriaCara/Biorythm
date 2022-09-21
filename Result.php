@@ -3,6 +3,8 @@
     $actveIndex = "";
     $activeResult = "active";
     $activeInfo = "";
+    $names_en = [ 'Physical', 'Emotional', 'Intellectual'];
+    $string_en = [ 'Your information:', 'Your name:', 'Number of days passed since your birth:', 'Your biorhythms:', 'Total:' ];
 
     include 'Navbar.php';
     require 'Biorhythm.php';
@@ -10,6 +12,7 @@
     $name = 'Diana Frances Spencer';
     $date = new DateTime('01/07/1961');
 
+    $cicles = [ 23, 28, 33 ];
     $physical = 23;
     $emotional = 28;
     $intellectual = 33;
@@ -32,15 +35,15 @@
 
     $days = $biorhythm->getDate($date);
     
-    $percentPhysical = $biorhythm->setPercentPhysical($days, $physical);
-    $percentEmotional = $biorhythm->setPercentEmotional($days, $emotional);
-    $percentIntellectual = $biorhythm->setPercentIntellectual($days, $intellectual);
+    $biorhythm->setPercentPhysical($days, $cicles[0]);
+    $biorhythm->setPercentEmotional($days, $cicles[1]);
+    $biorhythm->setPercentIntellectual($days, $cicles[2]);
 
-    $percentPhysical = $biorhythm->getPercentPhysical();
-    $percentEmotional = $biorhythm->getPercentEmotional();
-    $percentIntellectual = $biorhythm->getPercentIntellectual();
+    $percents[0] = $biorhythm->getPercentPhysical();
+    $percents[1]= $biorhythm->getPercentEmotional();
+    $percents[2] = $biorhythm->getPercentIntellectual();
 
-    $sumTotal = ($percentPhysical + $percentEmotional + $percentIntellectual);
+    $sumTotal = ($percents[0] + $percents[1] + $percents[2]);
 
 ?>
 
@@ -48,65 +51,55 @@
 <div class="container bg-white my-5 py-5">
     <form action="result.php" method="POST">
         <div class="position-absolute top-50 start-50 translate-middle bg-white">
-            <h2>Your information: </h2>
+            <h2><?php echo $string_en[0] ?> </h2>
             <br />
             <div class="mb-4">
-                <label for="name" class="form-label">Your name: </label>
+                <label for="name" class="form-label"><?php echo $string_en[1] ?> </label>
                 <input type="text" class="form-label" id="name" value="<?php echo $name; ?>" disabled>
             </div>
             <div class="mb-4">
-                <label for="age" class="form-label">Number of days passed since your birth: </label>
+                <label for="age" class="form-label"><?php echo $string_en[2] ?> </label>
                 <input type="text" class="form-label" id="age" value="<?php echo $days . ' days'; ?>" disabled>
             </div>
             <br />
             <div>
-                <h2>Your biorhythms: </h2>
+                <h2><?php echo $string_en[3] ?> </h2>
+                <?php
+
+                    for ($count = 0; $count < count($percents); $count++)
+                    {
+                        $width = 'bg-success';
+                        if ($percents[$count] <= 49) {
+                            $width = 'bg-danger';
+                        }
+                    
+                        echo "<br />
+                            <p>$names_en[$count]:</p>
+                            <div class='progress'>
+                                <div class='progress-bar progress-bar-striped progress-bar-animated $width' role='progressbar' aria-label='Animated striped example' style='width: $percents[$count]%' aria-valuenow='$percents[$count]' aria-valuemin='0' aria-valuemax='100'>$percents[$count]%</div>
+                            </div>";
+                    }
+                
+                ?>
                 <br />
-                <p>Physical:</p>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated <?php if ($percentPhysical <= 49) {
-                                                    echo 'bg-danger';
-                                                } else {
-                                                    echo 'bg-success';
-                                                } ?>" role="progressbar" aria-label="Animated striped example" style="width: <?php echo $percentPhysical . '%'; ?>;" aria-valuenow="<?php echo $percentPhysical; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $percentPhysical . '%'; ?></div>
-                </div>
-                <br />
-                <p>Emotional:</p>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated <?php if ($percentEmotional <= 49) {
-                                                    echo 'bg-danger';
-                                                } else {
-                                                    echo 'bg-success';
-                                                } ?>" role="progressbar" aria-label="Animated striped example" style="width: <?php echo $percentEmotional . '%'; ?>;" aria-valuenow="<?php echo $percentEmotional; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $percentEmotional . '%'; ?></div>
-                </div>
-                <br />
-                <p>Intellectual:</p>
-                <div class="progress">
-                    <div class="progress-bar  progress-bar-striped progress-bar-animated <?php if ($percentIntellectual <= 49) {
-                                                    echo 'bg-danger';
-                                                } else {
-                                                    echo 'bg-success';
-                                                } ?>" role="progressbar" aria-label="Animated striped example" style="width: <?php echo $percentIntellectual . '%'; ?>;" aria-valuenow="<?php echo $percentIntellectual; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $percentIntellectual . '%'; ?></div>
-                </div>
-                <br />
-                <h2>Total:</h2>
+                <h2><?php echo $string_en[4] ?></h2>
                 <br />
                 <div class="progress">
-                    <div class="progress-bar border border-dark <?php if ((($percentPhysical * 100) / $sumTotal) <= 49) {
-                                                    echo 'bg-danger';
-                                                } else {
-                                                    echo 'bg-success';
-                                                } ?> " role="progressbar" aria-label="Segment one" style="width: <?php echo (($percentPhysical * 100) / $sumTotal) . '%'; ?>" aria-valuenow="<?php echo (($percentPhysical * 100) / $sumTotal); ?>" aria-valuemin="0" aria-valuemax="<?php echo $sumTotal; ?>">Physical</div>
-                    <div class="progress-bar border border-dark <?php if ((($percentEmotional * 100) / $sumTotal) <= 49) {
-                                                    echo 'bg-danger';
-                                                } else {
-                                                    echo 'bg-succes';
-                                                } ?>" role="progressbar" aria-label="Segment two" style="width: <?php echo (($percentEmotional * 100) / $sumTotal) . '%'; ?>" aria-valuenow="<?php echo (($percentEmotional * 100) / $sumTotal); ?>" aria-valuemin="0" aria-valuemax="<?php echo $sumTotal; ?>">Emotional</div>
-                    <div class="progress-bar border border-dark <?php if ((($percentIntellectual * 100) / $sumTotal) <= 49) {
-                                                    echo 'bg-danger';
-                                                } else {
-                                                    echo 'bg-success';
-                                                } ?>" role="progressbar" aria-label="Segment three" style="width: <?php echo (($percentIntellectual * 100) / $sumTotal) . '%'; ?>" aria-valuenow="<?php echo (($percentIntellectual * 100) / $sumTotal); ?>" aria-valuemin="0" aria-valuemax="<?php echo $sumTotal; ?>">Intellectual</div>
+                    <?php 
+                    
+                        for ($count = 0; $count < count($percents); $count++)
+                        {
+                            $backGround = 'bg-succes';
+                            $width = (($percents[$count] * 100) / 2);
+
+                            if ((($percents[$count] * 100) / ($sumTotal)) <= 49) {
+                                $backGround = 'bg-danger';
+                            }
+
+                            echo "<div class='progress-bar border border-dark $backGround' role='progressbar' aria-label='Segment two' style='width: $width%' aria-valuenow='$width' aria-valuemin='0' aria-valuemax='$sumTotal'>$names_en[$count]</div>";
+
+                        }
+                    ?>
                 </div>
             </div>
         </div>
