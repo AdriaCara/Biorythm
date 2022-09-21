@@ -7,8 +7,8 @@
     include 'Navbar.php';
     include 'Biorhythm.php';
 
-    $name = 'Elizabeth Alexandra Mary';
-    $date = new DateTime('10/08/1926');
+    $name = 'Diana Frances Spencer';
+    $date = new DateTime('01/07/1961');
 
     $physical = 23;
     $emotional = 28;
