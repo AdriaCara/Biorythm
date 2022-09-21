@@ -7,8 +7,8 @@
     include 'Navbar.php';
     include 'Biorhythm.php';
 
-    $name = 'Elizabeth Alexandra Mary';
-    $date = new DateTime('10/08/1926');
+    $name = 'Diana Frances Spencer';
+    $date = new DateTime('01/07/1961');
 
     $physical = 23;
     $emotional = 28;
@@ -45,7 +45,7 @@
 ?>
 
 <br />
-<div class="container bg-white" style="padding: 40vh;">
+<div class="container bg-white my-5 py-5">
     <form action="result.php" method="POST">
         <div class="position-absolute top-50 start-50 translate-middle bg-white">
             <h2>Your information: </h2>
