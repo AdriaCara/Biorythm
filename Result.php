@@ -5,7 +5,7 @@
     $activeInfo = "";
 
     include 'Navbar.php';
-    include 'Biorhythm.php';
+    require 'Biorhythm.php';
 
     $name = 'Diana Frances Spencer';
     $date = new DateTime('01/07/1961');
